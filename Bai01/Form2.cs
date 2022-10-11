@@ -124,7 +124,7 @@ namespace Bai01
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
+       {
             if (e.KeyChar.Equals((char)13))
             {
                 
@@ -287,15 +287,8 @@ namespace Bai01
                         pictureBox_speaker.BackColor = Color.Transparent;
 
                         label_scoreend.Text = "Score: " + score.ToString();
-
-                        if (acc == "")
-                        {
-                            label_nameend.Text = "Player: unnamed player";
-                        }
-                        else
-                        {
-                            label_nameend.Text = "Player: " + acc;
-                        }
+                        label_nameend.Text = "Player: " + acc;
+                        
                         pos = this.PointToScreen(pictureBox_back.Location);
                         pos = pictureBox_name.PointToClient(pos);
                         pictureBox_back.Parent = pictureBox_name;
@@ -328,11 +321,11 @@ namespace Bai01
                 string[] strscore = s3.Split('_');
                 score3 = Convert.ToInt32(strscore[strscore.Length - 1]);
             }
-            if (acc == "")
+            if (acc.Trim() == "\n"|| acc.Trim() == "")
             {
                 acc = "unnamed player";
             }    
-                if (score >= score1)
+            if (score >= score1)
             {
                 s3 = s2;
                 s2 = s1;
@@ -342,8 +335,6 @@ namespace Bai01
             {
                 s3 = s2;
                 s2 = acc + "_" + score.ToString();
-                
-
             }
             else if (score >= score3)
             {

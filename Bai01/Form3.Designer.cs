@@ -118,7 +118,7 @@
             this.pictureBox_cate2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_cate2.BackgroundImage")));
             this.pictureBox_cate2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_cate2.InitialImage = null;
-            this.pictureBox_cate2.Location = new System.Drawing.Point(179, 12);
+            this.pictureBox_cate2.Location = new System.Drawing.Point(197, 2);
             this.pictureBox_cate2.Name = "pictureBox_cate2";
             this.pictureBox_cate2.Size = new System.Drawing.Size(120, 120);
             this.pictureBox_cate2.TabIndex = 17;
@@ -226,7 +226,7 @@
             this.pictureBox_cate1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_cate1.BackgroundImage")));
             this.pictureBox_cate1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_cate1.InitialImage = null;
-            this.pictureBox_cate1.Location = new System.Drawing.Point(190, 12);
+            this.pictureBox_cate1.Location = new System.Drawing.Point(197, 2);
             this.pictureBox_cate1.Name = "pictureBox_cate1";
             this.pictureBox_cate1.Size = new System.Drawing.Size(120, 120);
             this.pictureBox_cate1.TabIndex = 26;

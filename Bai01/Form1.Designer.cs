@@ -230,7 +230,7 @@
             this.label_transport.Name = "label_transport";
             this.label_transport.Size = new System.Drawing.Size(120, 22);
             this.label_transport.TabIndex = 21;
-            this.label_transport.Text = "TranSports";
+            this.label_transport.Text = "Transports";
             this.label_transport.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox_transport

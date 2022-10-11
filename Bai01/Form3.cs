@@ -196,7 +196,9 @@ namespace Bai01
                 for (int i = 1; i < strscore.Length - 1; i++)
                     s1 = s1 + "_" + strscore[i];
                 label_1st.Text = s1;
+                label_1st.TextAlign = ContentAlignment.TopLeft;
                 label_1s.Text = strscore[strscore.Length - 1];
+                label_1s.TextAlign = ContentAlignment.TopRight;
                 if (s2.Length > 1)
                 {
                     string[] strscore2 = s2.Split('_');
@@ -205,7 +207,9 @@ namespace Bai01
                     for (int i = 1; i < strscore2.Length - 1; i++)
                         s2 = s2 + "_" + strscore2[i];
                     label_2nd.Text = s2;
+                    label_2nd.TextAlign=ContentAlignment.TopLeft;
                     label_2s.Text = strscore2[strscore2.Length - 1];
+                    label_2s.TextAlign = ContentAlignment.TopRight;
                     if (s3.Length > 1)
                     {
                         string[] strscore3 = s3.Split('_');
@@ -214,11 +218,12 @@ namespace Bai01
                         for (int i = 1; i < strscore3.Length - 1; i++)
                             s3 = s3 + "_" + strscore3[i];
                         label_3rd.Text = s3;
+                        label_3rd.TextAlign = ContentAlignment.TopLeft;
                         label_3s.Text = strscore3[strscore3.Length - 1];
+                        label_3s.TextAlign = ContentAlignment.TopRight;
                     }
                     else
                     {
-
                         pictureBox_3rd.Hide();
                         label_3s.Hide();
                         label_3rd.Hide();

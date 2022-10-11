@@ -101,11 +101,24 @@ namespace Bai01
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            this.pictureBox_card.Show();
-            this.label_card.Show();
             this.listView1.Hide();
-            this.button_good.Show();
-            this.button_replay.Show();
+            if (images.Length == 0)
+            {
+                label_card.Hide();
+                pictureBox_card.Hide();
+                button_good.Hide();
+                button_replay.Hide();
+                label_finish.Show();
+            }
+            else
+            {
+                this.pictureBox_card.Show();
+                this.label_card.Show();
+                
+                this.button_good.Show();
+                this.button_replay.Show();
+            }    
+
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -114,6 +127,7 @@ namespace Bai01
             this.listView1.Show();
             this.button_good.Hide();
             this.button_replay.Hide();
+            this.label_finish.Hide();
         }
         private void RandomizePicture()
         {
