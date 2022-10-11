@@ -47,9 +47,11 @@
             this.pictureBox_fruit = new System.Windows.Forms.PictureBox();
             this.pictureBox_back = new System.Windows.Forms.PictureBox();
             this.pictureBox_job = new System.Windows.Forms.PictureBox();
-            this.wmp = new AxWMPLib.AxWindowsMediaPlayer();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_speaker = new System.Windows.Forms.PictureBox();
             this.pictureBox_exit = new System.Windows.Forms.PictureBox();
+            this.pictureBox_begin = new System.Windows.Forms.PictureBox();
+            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_susleft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_susright)).BeginInit();
@@ -60,9 +62,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fruit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_back)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_job)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_speaker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_begin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox_susleft
@@ -281,27 +284,18 @@
             this.pictureBox_job.TabStop = false;
             this.pictureBox_job.Click += new System.EventHandler(this.pictureBox_job_Click);
             // 
-            // wmp
+            // pictureBox_speaker
             // 
-            this.wmp.Enabled = true;
-            this.wmp.Location = new System.Drawing.Point(243, 414);
-            this.wmp.Name = "wmp";
-            this.wmp.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp.OcxState")));
-            this.wmp.Size = new System.Drawing.Size(130, 62);
-            this.wmp.TabIndex = 26;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Bai01.Properties.Resources.speaker;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(775, 65);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(87, 85);
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox_speaker.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_speaker.BackgroundImage = global::Bai01.Properties.Resources.speaker;
+            this.pictureBox_speaker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_speaker.InitialImage = null;
+            this.pictureBox_speaker.Location = new System.Drawing.Point(775, 71);
+            this.pictureBox_speaker.Name = "pictureBox_speaker";
+            this.pictureBox_speaker.Size = new System.Drawing.Size(87, 85);
+            this.pictureBox_speaker.TabIndex = 27;
+            this.pictureBox_speaker.TabStop = false;
+            this.pictureBox_speaker.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox_exit
             // 
@@ -315,6 +309,38 @@
             this.pictureBox_exit.TabStop = false;
             this.pictureBox_exit.Click += new System.EventHandler(this.pictureBox_exit_Click);
             // 
+            // pictureBox_begin
+            // 
+            this.pictureBox_begin.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_begin.BackgroundImage = global::Bai01.Addition.begin;
+            this.pictureBox_begin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_begin.Location = new System.Drawing.Point(-2, -1);
+            this.pictureBox_begin.Name = "pictureBox_begin";
+            this.pictureBox_begin.Size = new System.Drawing.Size(887, 487);
+            this.pictureBox_begin.TabIndex = 34;
+            this.pictureBox_begin.TabStop = false;
+            // 
+            // pictureBox_logo
+            // 
+            this.pictureBox_logo.BackgroundImage = global::Bai01.Addition.logo;
+            this.pictureBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_logo.Location = new System.Drawing.Point(269, 12);
+            this.pictureBox_logo.Name = "pictureBox_logo";
+            this.pictureBox_logo.Size = new System.Drawing.Size(599, 212);
+            this.pictureBox_logo.TabIndex = 35;
+            this.pictureBox_logo.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::Bai01.Addition.buttonstart;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(378, 212);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(132, 71);
+            this.button1.TabIndex = 36;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -322,9 +348,11 @@
             this.BackgroundImage = global::Bai01.Addition.pinkbackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(880, 481);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox_logo);
+            this.Controls.Add(this.pictureBox_begin);
             this.Controls.Add(this.pictureBox_exit);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.wmp);
+            this.Controls.Add(this.pictureBox_speaker);
             this.Controls.Add(this.pictureBox_job);
             this.Controls.Add(this.pictureBox_back);
             this.Controls.Add(this.pictureBox_fruit);
@@ -356,9 +384,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fruit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_back)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_job)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_speaker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_begin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -382,9 +411,11 @@
         private System.Windows.Forms.PictureBox pictureBox_fruit;
         private System.Windows.Forms.PictureBox pictureBox_back;
         private System.Windows.Forms.PictureBox pictureBox_job;
-        private AxWMPLib.AxWindowsMediaPlayer wmp;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox_speaker;
         private System.Windows.Forms.PictureBox pictureBox_exit;
+        private System.Windows.Forms.PictureBox pictureBox_begin;
+        private System.Windows.Forms.PictureBox pictureBox_logo;
+        private System.Windows.Forms.Button button1;
     }
 }
 

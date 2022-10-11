@@ -12,10 +12,9 @@ namespace Bai01
 {
     public partial class Form3 : Form
     {
-        public string catetory;
-        public Form3( string s)
+        
+        public Form3()
         {
-            catetory = s;   
             InitializeComponent();
             this.CenterToScreen();
             var pos = this.PointToScreen(pictureBox_cate1.Location);
@@ -108,7 +107,24 @@ namespace Bai01
             pictureBox_buc.Parent = pictureBox5;
             pictureBox_buc.Location = pos;
             pictureBox_buc.BackColor = Color.Transparent;
-            switch (catetory)
+
+            pos = this.PointToScreen(pictureBox_speaker.Location);
+            pos = pictureBox5.PointToClient(pos);
+            pictureBox_speaker.Parent = pictureBox5;
+            pictureBox_speaker.Location = pos;
+            pictureBox_speaker.BackColor = Color.Transparent;
+            if (Form1.soundon)
+            {
+                pictureBox_speaker2.BackgroundImage = Addition.speaker;
+                pictureBox_speaker.BackgroundImage = Addition.speaker;
+            }
+            else
+            {
+                pictureBox_speaker2.BackgroundImage = Addition.mute;
+                pictureBox_speaker.BackgroundImage = Addition.mute;
+            }
+
+            switch (Form1.category)
             {
                 case "animal":
                     {
@@ -146,8 +162,8 @@ namespace Bai01
                 case "job":
                     {
                         label_cate.Text = "Jobs";
-                        pictureBox_cate1.BackgroundImage = Addition.place;
-                        pictureBox_cate2.BackgroundImage = Addition.place;
+                        pictureBox_cate1.BackgroundImage = Addition.job;
+                        pictureBox_cate2.BackgroundImage = Addition.job;
                         string s1 = Properties.Settings.Default.job_first;
                         string s2 = Properties.Settings.Default.job_second;
                         string s3 = Properties.Settings.Default.job_third;
@@ -245,6 +261,23 @@ namespace Bai01
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pictureBox_speaker1_Click(object sender, EventArgs e)
+        {
+            if (Form1.soundon)
+            {
+                Form1.wmp.Ctlcontrols.stop();
+                pictureBox_speaker2.BackgroundImage = Addition.mute;
+                pictureBox_speaker.BackgroundImage = Addition.mute;
+            }
+            else
+            {
+                Form1.wmp.Ctlcontrols.play();
+                pictureBox_speaker.BackgroundImage = Addition.speaker;
+                pictureBox_speaker2.BackgroundImage = Addition.speaker;
+            }
+            Form1.soundon = !Form1.soundon;
         }
     }
 }

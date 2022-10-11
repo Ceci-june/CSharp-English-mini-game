@@ -18,13 +18,12 @@ namespace Bai01
     {
         public Bitmap[] images;
         public string[] name;
-        public string category;
         public Random r = new Random();
         public Bitmap pic;
         public string pic_name;
-        public Form4(string s)
+        public Form4()
         {
-            category = s;
+            
             InitializeComponent();
             GetResourceImages();
             this.CenterToScreen();
@@ -51,11 +50,19 @@ namespace Bai01
             this.button_good.Hide();
             this.button_replay.Hide();  
             RandomizePicture();
+            if (Form1.soundon)
+            {
+                pictureBox_speaker.BackgroundImage = Addition.speaker;
+            }
+            else
+            {
+                pictureBox_speaker.BackgroundImage = Addition.mute;
+            }
         }
         private void GetResourceImages()
         {
             PropertyInfo[] props = { };
-            switch (category)
+            switch (Form1.category)
             {
                 case "animal":
                     label_cate.Text = "Animals";
@@ -146,6 +153,21 @@ namespace Bai01
                 RandomizePicture();
             }
                 
+        }
+
+        private void pictureBox_speaker_Click(object sender, EventArgs e)
+        {
+            if (Form1.soundon)
+            {
+                Form1.wmp.Ctlcontrols.stop();
+                pictureBox_speaker.BackgroundImage = Addition.mute;
+            }
+            else
+            {
+                Form1.wmp.Ctlcontrols.play();
+                pictureBox_speaker.BackgroundImage = Addition.speaker;
+            }
+            Form1.soundon = !Form1.soundon;
         }
     }
 }

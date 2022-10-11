@@ -5,25 +5,33 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace Bai01
 {
     public partial class Form1 : Form
     {
-        //System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-        //player.Play();
-        public int option = 0;
-        public string caterory = "";
-        public bool soundon = true;
         
+        private int option = 0;
+        public static string category = "";
+        public static bool soundon = true;
+        public static AxWindowsMediaPlayer wmp = new AxWindowsMediaPlayer();
         public Form1()
         {
+            
             InitializeComponent();
             this.CenterToScreen();
+            
+            var pos = this.PointToScreen(pictureBox_logo.Location);
+            pos = pictureBox_begin.PointToClient(pos);
+            pictureBox_logo.Parent = pictureBox_begin;
+            pictureBox_logo.Location = pos;
+            pictureBox_logo.BackColor = Color.Transparent;
             this.label_fruit.BackColor = System.Drawing.Color.Transparent;
             this.label_animal.BackColor = System.Drawing.Color.Transparent;
             this.label_place.BackColor = System.Drawing.Color.Transparent;
@@ -40,6 +48,8 @@ namespace Bai01
             this.pictureBox_animal.Hide();
             this.pictureBox_fruit.Hide();
             this.pictureBox_back.Hide();
+            wmp.CreateControl();
+            //wmp.SkinAllThreads();
             wmp.URL = "backgroundmusic.mp3";
             //this.wmp.EditMode.
             wmp.Hide();
@@ -49,7 +59,7 @@ namespace Bai01
 
         private void choose()
         {
-            pictureBox1.Hide();
+            pictureBox_speaker.Hide();
             pictureBox4.Show();
             pictureBox4.Size = this.Size;
             pictureBox4.Image = Addition.vent;
@@ -79,7 +89,7 @@ namespace Bai01
                     this.pictureBox_animal.Show();
                     this.pictureBox_fruit.Show();
                     this.pictureBox_back.Show();
-                    pictureBox1.Show();
+                    pictureBox_speaker.Show();
                 }));
             });
         }
@@ -112,27 +122,34 @@ namespace Bai01
         }
         private void chooseform()
         {
-            wmp.Ctlcontrols.stop();
             if (option == 1)
             {
-                Form2 form2 = new Form2(caterory);
+                Form2 form2 = new Form2();
                 form2.ShowDialog();
             }
             else if (option == 0)
             {
-                Form4 form4 = new Form4(caterory);
+                Form4 form4 = new Form4();
                 form4.ShowDialog();
             }
             else
             {
-                Form3 form3 = new Form3(caterory);
+                Form3 form3 = new Form3();
                 form3.ShowDialog();
             }
-            wmp.Ctlcontrols.play();
+            if (soundon)
+            {
+                pictureBox_speaker.BackgroundImage = Addition.speaker;
+            }
+            else
+            {
+                pictureBox_speaker.BackgroundImage = Addition.mute;
+            }
+            //wmp.Ctlcontrols.play();
         }
         private void pictureBox_animal_Click(object sender, EventArgs e)
         {
-            caterory = "animal";
+            category = "animal";
             chooseform();
             
         }
@@ -151,26 +168,26 @@ namespace Bai01
 
         private void pictureBox_fruit_Click(object sender, EventArgs e)
         {
-            caterory = "fruit";
+            category = "fruit";
             chooseform();
         }
 
 
         private void pictureBox_job_Click(object sender, EventArgs e)
         {
-            caterory = "job";
+            category = "job";
             chooseform();
         }
 
         private void pictureBox_transport_Click(object sender, EventArgs e)
         {
-            caterory = "transport";
+            category = "transport";
             chooseform();
         }
 
         private void pictureBox_vegetable_Click(object sender, EventArgs e)
         {
-            caterory = "vegetable";
+            category = "vegetable";
             chooseform();
         }
 
@@ -180,12 +197,12 @@ namespace Bai01
             {
                 wmp.Ctlcontrols.stop();
                 
-                pictureBox1.BackgroundImage = Addition.mute;
+                pictureBox_speaker.BackgroundImage = Addition.mute;
             }
             else
             {
                 wmp.Ctlcontrols.play();
-                pictureBox1.BackgroundImage = Addition.speaker;
+                pictureBox_speaker.BackgroundImage = Addition.speaker;
             }    
             soundon = !soundon;
         }
@@ -193,6 +210,14 @@ namespace Bai01
         private void pictureBox_exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pictureBox_begin.Hide();
+            pictureBox_logo.Hide();
+            button1.Hide();
+            button1.Enabled = false;
         }
     }
 }

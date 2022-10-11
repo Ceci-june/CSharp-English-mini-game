@@ -49,6 +49,8 @@
             this.label_3s = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_speaker2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_speaker = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_sus2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_sus3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_sus1)).BeginInit();
@@ -62,6 +64,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_speaker2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_speaker)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox_sus2
@@ -69,7 +73,7 @@
             this.pictureBox_sus2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_sus2.BackgroundImage = global::Bai01.Addition.Amongus06;
             this.pictureBox_sus2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_sus2.Location = new System.Drawing.Point(179, 382);
+            this.pictureBox_sus2.Location = new System.Drawing.Point(197, 405);
             this.pictureBox_sus2.Name = "pictureBox_sus2";
             this.pictureBox_sus2.Size = new System.Drawing.Size(92, 110);
             this.pictureBox_sus2.TabIndex = 3;
@@ -80,7 +84,7 @@
             this.pictureBox_sus3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_sus3.BackgroundImage = global::Bai01.Addition.Amongus01;
             this.pictureBox_sus3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_sus3.Location = new System.Drawing.Point(286, 409);
+            this.pictureBox_sus3.Location = new System.Drawing.Point(304, 432);
             this.pictureBox_sus3.Name = "pictureBox_sus3";
             this.pictureBox_sus3.Size = new System.Drawing.Size(92, 110);
             this.pictureBox_sus3.TabIndex = 4;
@@ -91,7 +95,7 @@
             this.pictureBox_sus1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_sus1.BackgroundImage = global::Bai01.Addition.Amongus02;
             this.pictureBox_sus1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_sus1.Location = new System.Drawing.Point(78, 395);
+            this.pictureBox_sus1.Location = new System.Drawing.Point(96, 418);
             this.pictureBox_sus1.Name = "pictureBox_sus1";
             this.pictureBox_sus1.Size = new System.Drawing.Size(92, 110);
             this.pictureBox_sus1.TabIndex = 5;
@@ -102,7 +106,7 @@
             this.pictureBox_buc.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_buc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_buc.BackgroundImage")));
             this.pictureBox_buc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_buc.Location = new System.Drawing.Point(65, 484);
+            this.pictureBox_buc.Location = new System.Drawing.Point(78, 515);
             this.pictureBox_buc.Name = "pictureBox_buc";
             this.pictureBox_buc.Size = new System.Drawing.Size(326, 93);
             this.pictureBox_buc.TabIndex = 6;
@@ -125,7 +129,7 @@
             this.pictureBox5.BackgroundImage = global::Bai01.Addition.pinkbackground;
             this.pictureBox5.Location = new System.Drawing.Point(42, 60);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(375, 482);
+            this.pictureBox5.Size = new System.Drawing.Size(409, 496);
             this.pictureBox5.TabIndex = 18;
             this.pictureBox5.TabStop = false;
             // 
@@ -134,7 +138,7 @@
             this.label_cate.CausesValidation = false;
             this.label_cate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_cate.ForeColor = System.Drawing.Color.Maroon;
-            this.label_cate.Location = new System.Drawing.Point(132, 135);
+            this.label_cate.Location = new System.Drawing.Point(143, 135);
             this.label_cate.Name = "label_cate";
             this.label_cate.Size = new System.Drawing.Size(206, 22);
             this.label_cate.TabIndex = 19;
@@ -147,7 +151,7 @@
             this.label_1st.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_1st.ForeColor = System.Drawing.Color.Maroon;
             this.label_1st.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_1st.Location = new System.Drawing.Point(132, 185);
+            this.label_1st.Location = new System.Drawing.Point(153, 202);
             this.label_1st.Name = "label_1st";
             this.label_1st.Size = new System.Drawing.Size(195, 47);
             this.label_1st.TabIndex = 20;
@@ -160,7 +164,7 @@
             this.pictureBox_1st.BackgroundImage = global::Bai01.Addition._1st;
             this.pictureBox_1st.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_1st.InitialImage = null;
-            this.pictureBox_1st.Location = new System.Drawing.Point(78, 185);
+            this.pictureBox_1st.Location = new System.Drawing.Point(99, 202);
             this.pictureBox_1st.Name = "pictureBox_1st";
             this.pictureBox_1st.Size = new System.Drawing.Size(48, 47);
             this.pictureBox_1st.TabIndex = 21;
@@ -172,7 +176,7 @@
             this.pictureBox_2nd.BackgroundImage = global::Bai01.Addition._2nd;
             this.pictureBox_2nd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_2nd.InitialImage = null;
-            this.pictureBox_2nd.Location = new System.Drawing.Point(78, 247);
+            this.pictureBox_2nd.Location = new System.Drawing.Point(99, 264);
             this.pictureBox_2nd.Name = "pictureBox_2nd";
             this.pictureBox_2nd.Size = new System.Drawing.Size(48, 47);
             this.pictureBox_2nd.TabIndex = 22;
@@ -184,7 +188,7 @@
             this.pictureBox_3rd.BackgroundImage = global::Bai01.Addition._3rd;
             this.pictureBox_3rd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_3rd.InitialImage = null;
-            this.pictureBox_3rd.Location = new System.Drawing.Point(78, 310);
+            this.pictureBox_3rd.Location = new System.Drawing.Point(99, 327);
             this.pictureBox_3rd.Name = "pictureBox_3rd";
             this.pictureBox_3rd.Size = new System.Drawing.Size(48, 47);
             this.pictureBox_3rd.TabIndex = 23;
@@ -196,7 +200,7 @@
             this.label_2nd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_2nd.ForeColor = System.Drawing.Color.Maroon;
             this.label_2nd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_2nd.Location = new System.Drawing.Point(132, 247);
+            this.label_2nd.Location = new System.Drawing.Point(153, 264);
             this.label_2nd.Name = "label_2nd";
             this.label_2nd.Size = new System.Drawing.Size(195, 47);
             this.label_2nd.TabIndex = 24;
@@ -209,7 +213,7 @@
             this.label_3rd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_3rd.ForeColor = System.Drawing.Color.Maroon;
             this.label_3rd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_3rd.Location = new System.Drawing.Point(132, 310);
+            this.label_3rd.Location = new System.Drawing.Point(153, 327);
             this.label_3rd.Name = "label_3rd";
             this.label_3rd.Size = new System.Drawing.Size(195, 47);
             this.label_3rd.TabIndex = 25;
@@ -222,7 +226,7 @@
             this.pictureBox_cate1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_cate1.BackgroundImage")));
             this.pictureBox_cate1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_cate1.InitialImage = null;
-            this.pictureBox_cate1.Location = new System.Drawing.Point(179, 12);
+            this.pictureBox_cate1.Location = new System.Drawing.Point(190, 12);
             this.pictureBox_cate1.Name = "pictureBox_cate1";
             this.pictureBox_cate1.Size = new System.Drawing.Size(120, 120);
             this.pictureBox_cate1.TabIndex = 26;
@@ -234,7 +238,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(65, 484);
+            this.pictureBox1.Location = new System.Drawing.Point(78, 515);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(326, 93);
             this.pictureBox1.TabIndex = 27;
@@ -246,7 +250,7 @@
             this.label_1s.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_1s.ForeColor = System.Drawing.Color.Maroon;
             this.label_1s.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_1s.Location = new System.Drawing.Point(333, 185);
+            this.label_1s.Location = new System.Drawing.Point(354, 202);
             this.label_1s.Name = "label_1s";
             this.label_1s.Size = new System.Drawing.Size(45, 47);
             this.label_1s.TabIndex = 28;
@@ -259,7 +263,7 @@
             this.label_2s.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_2s.ForeColor = System.Drawing.Color.Maroon;
             this.label_2s.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.label_2s.Location = new System.Drawing.Point(333, 247);
+            this.label_2s.Location = new System.Drawing.Point(354, 264);
             this.label_2s.Name = "label_2s";
             this.label_2s.Size = new System.Drawing.Size(45, 47);
             this.label_2s.TabIndex = 29;
@@ -272,7 +276,7 @@
             this.label_3s.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_3s.ForeColor = System.Drawing.Color.Maroon;
             this.label_3s.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_3s.Location = new System.Drawing.Point(333, 310);
+            this.label_3s.Location = new System.Drawing.Point(354, 327);
             this.label_3s.Name = "label_3s";
             this.label_3s.Size = new System.Drawing.Size(45, 47);
             this.label_3s.TabIndex = 30;
@@ -296,12 +300,37 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImage = global::Bai01.Addition.Exit;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(365, 19);
+            this.pictureBox4.Location = new System.Drawing.Point(411, 19);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(73, 43);
             this.pictureBox4.TabIndex = 32;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox_speaker2
+            // 
+            this.pictureBox_speaker2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_speaker2.BackgroundImage = global::Bai01.Properties.Resources.speaker;
+            this.pictureBox_speaker2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_speaker2.InitialImage = null;
+            this.pictureBox_speaker2.Location = new System.Drawing.Point(397, 68);
+            this.pictureBox_speaker2.Name = "pictureBox_speaker2";
+            this.pictureBox_speaker2.Size = new System.Drawing.Size(87, 85);
+            this.pictureBox_speaker2.TabIndex = 33;
+            this.pictureBox_speaker2.TabStop = false;
+            // 
+            // pictureBox_speaker
+            // 
+            this.pictureBox_speaker.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_speaker.BackgroundImage = global::Bai01.Properties.Resources.speaker;
+            this.pictureBox_speaker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_speaker.InitialImage = null;
+            this.pictureBox_speaker.Location = new System.Drawing.Point(397, 68);
+            this.pictureBox_speaker.Name = "pictureBox_speaker";
+            this.pictureBox_speaker.Size = new System.Drawing.Size(87, 85);
+            this.pictureBox_speaker.TabIndex = 34;
+            this.pictureBox_speaker.TabStop = false;
+            this.pictureBox_speaker.Click += new System.EventHandler(this.pictureBox_speaker1_Click);
             // 
             // Form3
             // 
@@ -309,7 +338,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Bai01.Addition.sky;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(450, 594);
+            this.ClientSize = new System.Drawing.Size(496, 620);
+            this.Controls.Add(this.pictureBox_speaker);
             this.Controls.Add(this.label_3s);
             this.Controls.Add(this.label_2s);
             this.Controls.Add(this.label_1s);
@@ -330,6 +360,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox_speaker2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form3";
             this.Text = "Form3";
@@ -346,6 +377,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_speaker2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_speaker)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -371,5 +404,7 @@
         private System.Windows.Forms.Label label_3s;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox_speaker2;
+        private System.Windows.Forms.PictureBox pictureBox_speaker;
     }
 }

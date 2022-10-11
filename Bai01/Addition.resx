@@ -130,20 +130,23 @@
   <data name="grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Amongus02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Amongus02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="endgame" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\endgame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="question" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="score" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\score.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mute" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\mute.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="place" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\place.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="begin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\begin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Amongus01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Amongus01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -159,9 +162,6 @@
   </data>
   <data name="incorrect" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\incorrect.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_3rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\3rd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="incorrecttext" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\incorrecttext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,8 +181,8 @@
   <data name="Amongus05" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Amongus05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="transport" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\transport.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_3rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\3rd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\rank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -192,6 +192,9 @@
   </data>
   <data name="space" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\space.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pinkbackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\pinkbackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_1st" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\1st.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,8 +211,14 @@
   <data name="flashcard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\flashcard.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pinkbackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\pinkbackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Amongus02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Amongus02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\transport.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\job.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_2nd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\2nd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,10 +235,10 @@
   <data name="map" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\map.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="score" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\score.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="question" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="job" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\job.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buttonstart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\buttonstart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

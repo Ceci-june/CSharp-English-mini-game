@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AxWMPLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,13 +24,13 @@ namespace Bai01
         public string answer;
         public string[] name;
         public int count;
-        public string category;
+        //public string category;
         public int score = 0;
         public string acc;
-        
-        public Form2(string s)
+        public AxWindowsMediaPlayer wmp = new AxWindowsMediaPlayer();
+        public Form2()
         {
-            category = s;
+            //category = s;
             InitializeComponent();
             GetResourceImages();
             this.CenterToScreen();
@@ -48,12 +49,14 @@ namespace Bai01
             pictureBox_incorrecttext.Location = pos;
             pictureBox_incorrecttext.BackColor = Color.Transparent;
             pictureBox_incorrecttext.Hide();
+
             pos = this.PointToScreen(pictureBox_correcttext.Location);
             pos = pictureBox2.PointToClient(pos);
             pictureBox_correcttext.Parent = pictureBox2;
             pictureBox_correcttext.Location = pos;
             pictureBox_correcttext.BackColor = Color.Transparent;
             pictureBox_correcttext.Hide();
+
             pos = this.PointToScreen(label3.Location);
             pos = pictureBox2.PointToClient(pos);
             label3.Parent = pictureBox2;
@@ -63,12 +66,20 @@ namespace Bai01
             textBox1.Enabled = false;
             label_nameend.Hide();
             label_scoreend.Hide();
-            
+            if (Form1.soundon)
+            {
+                pictureBox_speaker.BackgroundImage = Addition.speaker;
+            }
+            else
+            {
+                pictureBox_speaker.BackgroundImage = Addition.mute;
+            }
+            this.BackgroundImage = Addition.name;
         }
         private void GetResourceImages()
         {
             PropertyInfo[] props = { };
-            switch (category)
+            switch (Form1.category)
             {
                 case "animal":
                     props = typeof(Animal).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
@@ -119,7 +130,7 @@ namespace Bai01
                 
                 this.pictureBox2.Enabled = true;
                 pictureBox4.Hide();
-                pictureBox5.Hide();
+                pictureBox_back.Hide();
                 label3.Show();
                 label3.Text = "";
                 this.textBox1.Hide();
@@ -127,15 +138,13 @@ namespace Bai01
                 pictureBox2.Image = Addition.space;
                 pictureBox2.Show();
                 this.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-                    
+                pictureBox_speaker.Hide();
                 this.label2.Hide();
                 this.pictureBox3.Hide();
                 this.label1.Hide();
                 this.pictureBox_table.Hide();
-                //textBox1.Enabled = false;
-                //if (answer.ToLower().Trim() == this.textBox1.Text.ToLower().Replace('_', ' ').Trim())
 
-                if (answer.ToLower() == this.textBox1.Text.ToLower().Replace('_',' '))
+                if (answer.ToLower().Trim() == this.textBox1.Text.ToLower().Replace('_', ' ').Trim())
                 {
                     pictureBox_correcttext.Show();
                     string s = answer + " is the correct answer";
@@ -148,6 +157,7 @@ namespace Bai01
                     string s = "the correct answer is " + answer;
                     result_newimage(s);
                 }
+                //}
             }
         }
         private void result_newimage(string s)
@@ -171,9 +181,9 @@ namespace Bai01
                     
                     this.ActiveControl = textBox1;
                     this.textBox1.Text = "";
-                   
+                    pictureBox_speaker.Show();
                     pictureBox4.Show();
-                    pictureBox5.Show();
+                    pictureBox_back.Show();
                     pictureBox_incorrecttext.Hide();
                     pictureBox_correcttext.Hide();
                     pictureBox2.Hide();
@@ -190,7 +200,7 @@ namespace Bai01
                         }
                         else
                         {
-                            switch (category)
+                            switch (Form1.category)
                             {
                                 case "animal":
                                     {
@@ -279,11 +289,11 @@ namespace Bai01
                             {
                                 label_nameend.Text = "Player: " + acc;
                             }
-                            pos = this.PointToScreen(pictureBox5.Location);
+                            pos = this.PointToScreen(pictureBox_back.Location);
                             pos = pictureBox_name.PointToClient(pos);
-                            pictureBox5.Parent = pictureBox_name;
-                            pictureBox5.Location = pos;
-                            pictureBox5.BackColor = Color.Transparent;
+                            pictureBox_back.Parent = pictureBox_name;
+                            pictureBox_back.Location = pos;
+                            pictureBox_back.BackColor = Color.Transparent;
 
                             label_scoreend.Show();
                             label_nameend.Show();
@@ -358,8 +368,26 @@ namespace Bai01
                 RandomizePicture();
                 textBox1.Enabled = true;
                 textBox1.Focus();
+                pictureBox_back.BackColor = Color.Transparent;
+                pictureBox_speaker.BackColor = Color.Transparent;
+                this.BackgroundImage = Addition.Chat;
             }
         }
 
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if (Form1.soundon)
+            {
+                Form1.wmp.Ctlcontrols.stop();
+
+                pictureBox_speaker.BackgroundImage = Addition.mute;
+            }
+            else
+            {
+                Form1.wmp.Ctlcontrols.play();
+                pictureBox_speaker.BackgroundImage = Addition.speaker;
+            }
+            Form1.soundon = !Form1.soundon;
+        }
     }
 }

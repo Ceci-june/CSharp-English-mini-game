@@ -35,7 +35,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_back = new System.Windows.Forms.PictureBox();
             this.pictureBox_table = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -51,11 +51,12 @@
             this.pictureBox_correcttext = new System.Windows.Forms.PictureBox();
             this.label_nameend = new System.Windows.Forms.Label();
             this.label_scoreend = new System.Windows.Forms.Label();
+            this.pictureBox_speaker = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_back)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_table)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_incorrecttext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_name)).BeginInit();
@@ -64,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_name3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_name4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_correcttext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_speaker)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -127,17 +129,17 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // pictureBox5
+            // pictureBox_back
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(25, 12);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(73, 50);
-            this.pictureBox5.TabIndex = 8;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.pictureBox_back.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_back.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_back.BackgroundImage")));
+            this.pictureBox_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_back.Location = new System.Drawing.Point(25, 12);
+            this.pictureBox_back.Name = "pictureBox_back";
+            this.pictureBox_back.Size = new System.Drawing.Size(73, 50);
+            this.pictureBox_back.TabIndex = 8;
+            this.pictureBox_back.TabStop = false;
+            this.pictureBox_back.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox_table
             // 
@@ -188,12 +190,11 @@
             this.pictureBox_name.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_name.BackgroundImage = global::Bai01.Addition.name;
             this.pictureBox_name.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_name.Location = new System.Drawing.Point(-3, -2);
+            this.pictureBox_name.Location = new System.Drawing.Point(2, -2);
             this.pictureBox_name.Name = "pictureBox_name";
             this.pictureBox_name.Size = new System.Drawing.Size(975, 532);
             this.pictureBox_name.TabIndex = 13;
             this.pictureBox_name.TabStop = false;
-            //this.pictureBox_name.Click += new System.EventHandler(this.pictureBox_name_Click);
             // 
             // richTextBox_namet
             // 
@@ -292,6 +293,19 @@
             this.label_scoreend.Text = "label4";
             this.label_scoreend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox_speaker
+            // 
+            this.pictureBox_speaker.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_speaker.BackgroundImage = global::Bai01.Properties.Resources.speaker;
+            this.pictureBox_speaker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_speaker.InitialImage = null;
+            this.pictureBox_speaker.Location = new System.Drawing.Point(881, 68);
+            this.pictureBox_speaker.Name = "pictureBox_speaker";
+            this.pictureBox_speaker.Size = new System.Drawing.Size(87, 85);
+            this.pictureBox_speaker.TabIndex = 28;
+            this.pictureBox_speaker.TabStop = false;
+            this.pictureBox_speaker.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -299,6 +313,7 @@
             this.BackgroundImage = global::Bai01.Addition.Chat;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(980, 531);
+            this.Controls.Add(this.pictureBox_speaker);
             this.Controls.Add(this.label_scoreend);
             this.Controls.Add(this.label_nameend);
             this.Controls.Add(this.richTextBox_namet);
@@ -307,7 +322,7 @@
             this.Controls.Add(this.pictureBox_name2);
             this.Controls.Add(this.pictureBox_name1);
             this.Controls.Add(this.pictureBox_correcttext);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox_back);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.pictureBox_name);
@@ -328,7 +343,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_back)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_table)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_incorrecttext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_name)).EndInit();
@@ -337,6 +352,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_name3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_name4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_correcttext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_speaker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,7 +366,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox_back;
         private System.Windows.Forms.PictureBox pictureBox_table;
         private System.Windows.Forms.Label label1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -366,5 +382,7 @@
         private System.Windows.Forms.PictureBox pictureBox_correcttext;
         private System.Windows.Forms.Label label_nameend;
         private System.Windows.Forms.Label label_scoreend;
+        private System.Windows.Forms.PictureBox pictureBox_speaker;
+        //private AxWMPLib.AxWindowsMediaPlayer wmp;
     }
 }
