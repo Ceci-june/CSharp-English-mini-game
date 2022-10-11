@@ -48,6 +48,9 @@
             this.pictureBox_name3 = new System.Windows.Forms.PictureBox();
             this.pictureBox_name4 = new System.Windows.Forms.PictureBox();
             this.label_name = new System.Windows.Forms.Label();
+            this.pictureBox_correcttext = new System.Windows.Forms.PictureBox();
+            this.label_nameend = new System.Windows.Forms.Label();
+            this.label_scoreend = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -60,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_name2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_name3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_name4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_correcttext)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -161,7 +165,7 @@
             // pictureBox_incorrecttext
             // 
             this.pictureBox_incorrecttext.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_incorrecttext.BackgroundImage = global::Bai01.Addition.incorrect_text;
+            this.pictureBox_incorrecttext.BackgroundImage = global::Bai01.Addition.incorrecttext;
             this.pictureBox_incorrecttext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_incorrecttext.Location = new System.Drawing.Point(260, 19);
             this.pictureBox_incorrecttext.Name = "pictureBox_incorrecttext";
@@ -184,7 +188,7 @@
             this.pictureBox_name.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_name.BackgroundImage = global::Bai01.Addition.name;
             this.pictureBox_name.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_name.Location = new System.Drawing.Point(2, 12);
+            this.pictureBox_name.Location = new System.Drawing.Point(-3, -2);
             this.pictureBox_name.Name = "pictureBox_name";
             this.pictureBox_name.Size = new System.Drawing.Size(975, 532);
             this.pictureBox_name.TabIndex = 13;
@@ -255,6 +259,39 @@
             this.label_name.Text = "Enter your name";
             this.label_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox_correcttext
+            // 
+            this.pictureBox_correcttext.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_correcttext.BackgroundImage = global::Bai01.Addition.correcttext;
+            this.pictureBox_correcttext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_correcttext.Location = new System.Drawing.Point(312, 19);
+            this.pictureBox_correcttext.Name = "pictureBox_correcttext";
+            this.pictureBox_correcttext.Size = new System.Drawing.Size(379, 86);
+            this.pictureBox_correcttext.TabIndex = 22;
+            this.pictureBox_correcttext.TabStop = false;
+            // 
+            // label_nameend
+            // 
+            this.label_nameend.Font = new System.Drawing.Font("Microsoft Sans Serif", 49.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_nameend.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_nameend.Location = new System.Drawing.Point(99, 152);
+            this.label_nameend.Name = "label_nameend";
+            this.label_nameend.Size = new System.Drawing.Size(777, 104);
+            this.label_nameend.TabIndex = 23;
+            this.label_nameend.Text = "label4";
+            this.label_nameend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_scoreend
+            // 
+            this.label_scoreend.Font = new System.Drawing.Font("Microsoft Sans Serif", 49.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_scoreend.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_scoreend.Location = new System.Drawing.Point(102, 297);
+            this.label_scoreend.Name = "label_scoreend";
+            this.label_scoreend.Size = new System.Drawing.Size(774, 104);
+            this.label_scoreend.TabIndex = 24;
+            this.label_scoreend.Text = "label4";
+            this.label_scoreend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -262,14 +299,17 @@
             this.BackgroundImage = global::Bai01.Addition.Chat;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(980, 531);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.label_name);
+            this.Controls.Add(this.label_scoreend);
+            this.Controls.Add(this.label_nameend);
             this.Controls.Add(this.richTextBox_namet);
             this.Controls.Add(this.pictureBox_name4);
             this.Controls.Add(this.pictureBox_name3);
             this.Controls.Add(this.pictureBox_name2);
             this.Controls.Add(this.pictureBox_name1);
+            this.Controls.Add(this.pictureBox_correcttext);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.label_name);
             this.Controls.Add(this.pictureBox_name);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox_incorrecttext);
@@ -296,6 +336,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_name2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_name3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_name4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_correcttext)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,5 +363,8 @@
         private System.Windows.Forms.PictureBox pictureBox_name3;
         private System.Windows.Forms.PictureBox pictureBox_name4;
         private System.Windows.Forms.Label label_name;
+        private System.Windows.Forms.PictureBox pictureBox_correcttext;
+        private System.Windows.Forms.Label label_nameend;
+        private System.Windows.Forms.Label label_scoreend;
     }
 }

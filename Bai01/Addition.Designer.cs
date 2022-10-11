@@ -163,9 +163,19 @@ namespace Bai01 {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap correct {
+        internal static System.Drawing.Bitmap correcttext {
             get {
-                object obj = ResourceManager.GetObject("correct", resourceCulture);
+                object obj = ResourceManager.GetObject("correcttext", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap endgame {
+            get {
+                object obj = ResourceManager.GetObject("endgame", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +246,16 @@ namespace Bai01 {
         internal static System.Drawing.Bitmap incorrect_text {
             get {
                 object obj = ResourceManager.GetObject("incorrect_text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap incorrecttext {
+            get {
+                object obj = ResourceManager.GetObject("incorrecttext", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -170,6 +170,7 @@
             this.wmp.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp.OcxState")));
             this.wmp.Size = new System.Drawing.Size(130, 62);
             this.wmp.TabIndex = 31;
+            this.wmp.Visible = false;
             // 
             // pictureBox1
             // 

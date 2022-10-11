@@ -327,9 +327,6 @@
     <None Include="Resources\entername.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\name.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Amongus05.png" />
   </ItemGroup>
   <ItemGroup>
@@ -689,6 +686,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correcttext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\endgame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\incorrecttext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

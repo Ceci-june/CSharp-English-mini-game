@@ -24,16 +24,16 @@ namespace Bai01
         public string category;
         public bool x;
         //public bool istrue = true;
-        public int score=0;
+        public int score = 0;
         public string acc;
-        public Label labelX =new Label();
+        public Label labelX = new Label();
         // public PictureBox pictureBox_incorrect;
-        public Form2( string s )
+        public Form2(string s)
         {
             category = s;
             InitializeComponent();
             GetResourceImages();
-            
+
             pictureBox2.Hide();
             label2.BackColor = Color.FromArgb(236, 232, 33);
             //label1.Parent = pictureBox6;
@@ -52,7 +52,12 @@ namespace Bai01
             pictureBox_incorrecttext.Location = pos;
             pictureBox_incorrecttext.BackColor = Color.Transparent;
             pictureBox_incorrecttext.Hide();
-
+            pos = this.PointToScreen(pictureBox_correcttext.Location);
+            pos = pictureBox2.PointToClient(pos);
+            pictureBox_correcttext.Parent = pictureBox2;
+            pictureBox_correcttext.Location = pos;
+            pictureBox_correcttext.BackColor = Color.Transparent;
+            pictureBox_correcttext.Hide();
             pos = this.PointToScreen(label3.Location);
             pos = pictureBox2.PointToClient(pos);
             label3.Parent = pictureBox2;
@@ -60,13 +65,15 @@ namespace Bai01
             label3.BackColor = Color.Transparent;
             label3.Hide();
             textBox1.Enabled = false;
+            label_nameend.Hide();
+            label_scoreend.Hide();
             //label4.Text = Properties.Settings.Default.animal_first.ToString();
             //pictureBox_incorrect.Size = this.Size;
 
         }
         private void GetResourceImages()
         {
-            PropertyInfo[] props = {};
+            PropertyInfo[] props = { };
             switch (category)
             {
                 case "animal":
@@ -87,14 +94,14 @@ namespace Bai01
                 default:
                     // code block
                     break;
-            }    
-            
+            }
+
             images = props.Where(prop => prop.PropertyType == typeof(Bitmap)).Select(prop => prop.GetValue(null, null) as Bitmap).ToArray();
             name = props.Where(prop => prop.PropertyType == typeof(Bitmap)).Select(prop => prop.Name as string).ToArray();
         }
         private void RandomizePicture()
         {
-            
+
             x = true;
             //this.textBox1.Text = "";
             if (images == null || images.Length == 0)
@@ -113,6 +120,7 @@ namespace Bai01
             count++;
             this.label1.Text = "Question: " + count.ToString();
             label2.Text = score.ToString();
+            
 
             //this.textBox1.Text = answer;
         }
@@ -123,18 +131,20 @@ namespace Bai01
             {
                 if (x)
                 {
+                    pictureBox4.Hide();
+                    pictureBox5.Hide();
                     label3.Show();
                     label3.Text = "";
                     this.textBox1.Hide();
                     this.pictureBox1.Hide();
                     pictureBox2.Image = Addition.space;
-                    pictureBox2.Image = Addition.space;
+                    //pictureBox2.Image = Addition.space;
                     pictureBox2.Show();
                     //pictureBox2.Enabled = true;
                     this.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
                     if (answer.ToLower() == this.textBox1.Text.ToLower())
                     {
-                        pictureBox_incorrecttext.Show();
+                        pictureBox_correcttext.Show();
                         string s = answer + " is the correct answer";
 
                         Task.Run(() =>
@@ -154,19 +164,19 @@ namespace Bai01
                         });
                         //this.BackgroundImage = Addition.correct;
                         score++;
-                        
+
                     }
                     else
                     {
                         
                         pictureBox_incorrecttext.Show();
-                        string s = "the correct answer is "+answer;
-                       
+                        string s = "the correct answer is " + answer;
+
                         Task.Run(() =>
                         {
                             Thread.Sleep(900);
-                        
-                            for (int i=1;i<=s.Length;i++)
+
+                            for (int i = 1; i <= s.Length; i++)
                             {
                                 Thread.Sleep(100);
                                 this.Invoke(new Action(() =>
@@ -174,7 +184,7 @@ namespace Bai01
                                     label3.Text = s.Substring(0, i);
                                 }));
                             }
-                            
+
 
                         });
                     }
@@ -184,13 +194,16 @@ namespace Bai01
                     this.pictureBox3.Hide();
                     this.label1.Hide();
                     this.pictureBox_table.Hide();
-                   // this.pictureBox5.Hide();
-                } 
+                    // this.pictureBox5.Hide();
+                }
                 else
                 {
+                    pictureBox4.Show();
+                    pictureBox5.Show();
                     pictureBox_incorrecttext.Hide();
+                    pictureBox_correcttext.Hide();
                     pictureBox2.Hide();
-                      
+
                     this.textBox1.Show();
                     this.pictureBox1.Show();
                     this.label2.Show();
@@ -198,21 +211,21 @@ namespace Bai01
                     //this.BackgroundImage = Addition.Chat;
                     this.label1.Show();
                     this.pictureBox_table.Show();
-                    this.pictureBox5.Show();
-                    if (count<10)
+                    //this.pictureBox5.Show();
+                    if (count < 10)
                     {
                         RandomizePicture();
-                    }    
+                    }
                     else
                     {
-                        switch(category)
+                        switch (category)
                         {
                             case "animal":
                                 {
                                     string s1 = Properties.Settings.Default.animal_first;
                                     string s2 = Properties.Settings.Default.animal_second;
                                     string s3 = Properties.Settings.Default.animal_third;
-                                    rerank(ref s1,ref s2,ref s3);
+                                    rerank(ref s1, ref s2, ref s3);
                                     Properties.Settings.Default.animal_first = s1;
                                     Properties.Settings.Default.animal_second = s2;
                                     Properties.Settings.Default.animal_third = s3;
@@ -265,16 +278,49 @@ namespace Bai01
                             default:
                                 break;
                         }
-                        
-                        this.textBox1.Enabled = false;
-                        this.pictureBox_name.Image = Addition.correct;
+
+                        //this.textBox1.Enabled = false;
+                        this.pictureBox_name.Image = Addition.name;
                         this.pictureBox_name.Show();
                         this.pictureBox_name.SizeMode = PictureBoxSizeMode.StretchImage;
                         Properties.Settings.Default.Save();
-                    }    
+
+   
+                        var pos = this.PointToScreen(label_nameend.Location);
+                        pos = pictureBox_name.PointToClient(pos);
+                        label_nameend.Parent = pictureBox_name;
+                        label_nameend.Location = pos;
+                        label_nameend.BackColor = Color.Transparent;
+
+                        pos = this.PointToScreen(label_scoreend.Location);
+                        pos = pictureBox_name.PointToClient(pos);
+                        label_scoreend.Parent = pictureBox_name;
+                        label_scoreend.Location = pos;
+                        label_scoreend.BackColor = Color.Transparent;
+
+                        label_scoreend.Text = "Score: " + score.ToString();
+                        
+                        if(acc=="")
+                        {
+                            label_nameend.Text = "Player: unnamed player";
+                        }
+                        else
+                        {
+                            label_nameend.Text = "Player: " + acc;
+                        }
+                        pos = this.PointToScreen(pictureBox5.Location);
+                        pos = pictureBox_name.PointToClient(pos);
+                        pictureBox5.Parent = pictureBox_name;
+                        pictureBox5.Location = pos;
+                        pictureBox5.BackColor = Color.Transparent;
+
+                        label_scoreend.Show();
+                        label_nameend.Show();
+                    }
                     x = true;
-                }    
-                            
+
+                }
+
             }
         }
         private void rerank(ref string s1, ref string s2, ref string s3)
@@ -358,9 +404,10 @@ namespace Bai01
                 this.pictureBox_name2.Hide();
                 this.pictureBox_name4.Hide();
                 this.label_name.Hide();
+                //this.richTextBox_namet.Enabled = false;
                 RandomizePicture();
                 textBox1.Enabled = true;
-            }    
+            }
         }
 
         private void pictureBox_name_Click(object sender, EventArgs e)
