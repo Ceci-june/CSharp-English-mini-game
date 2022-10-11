@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox_susleft = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox_susright = new System.Windows.Forms.PictureBox();
@@ -50,6 +49,7 @@
             this.pictureBox_job = new System.Windows.Forms.PictureBox();
             this.wmp = new AxWMPLib.AxWindowsMediaPlayer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_exit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_susleft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_susright)).BeginInit();
@@ -62,20 +62,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_job)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            this.button1.Location = new System.Drawing.Point(781, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 51);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox_susleft
             // 
@@ -153,7 +141,7 @@
             this.label_place.Name = "label_place";
             this.label_place.Size = new System.Drawing.Size(120, 22);
             this.label_place.TabIndex = 1;
-            this.label_place.Text = "Places";
+            this.label_place.Text = "Jobs";
             this.label_place.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button_test
@@ -283,7 +271,7 @@
             // pictureBox_job
             // 
             this.pictureBox_job.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_job.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_job.BackgroundImage")));
+            this.pictureBox_job.BackgroundImage = global::Bai01.Addition.job;
             this.pictureBox_job.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_job.InitialImage = null;
             this.pictureBox_job.Location = new System.Drawing.Point(711, 178);
@@ -315,6 +303,18 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // pictureBox_exit
+            // 
+            this.pictureBox_exit.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_exit.BackgroundImage = global::Bai01.Addition.Exit;
+            this.pictureBox_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_exit.Location = new System.Drawing.Point(789, 22);
+            this.pictureBox_exit.Name = "pictureBox_exit";
+            this.pictureBox_exit.Size = new System.Drawing.Size(73, 43);
+            this.pictureBox_exit.TabIndex = 33;
+            this.pictureBox_exit.TabStop = false;
+            this.pictureBox_exit.Click += new System.EventHandler(this.pictureBox_exit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -322,6 +322,7 @@
             this.BackgroundImage = global::Bai01.Addition.pinkbackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(880, 481);
+            this.Controls.Add(this.pictureBox_exit);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.wmp);
             this.Controls.Add(this.pictureBox_job);
@@ -339,7 +340,6 @@
             this.Controls.Add(this.button_learn);
             this.Controls.Add(this.button_history);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox_susleft);
             this.Controls.Add(this.pictureBox_susright);
@@ -358,12 +358,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_job)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox_susleft;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox_susright;
@@ -384,6 +384,7 @@
         private System.Windows.Forms.PictureBox pictureBox_job;
         private AxWMPLib.AxWindowsMediaPlayer wmp;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox_exit;
     }
 }
 

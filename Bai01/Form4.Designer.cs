@@ -32,7 +32,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.label_animal = new System.Windows.Forms.Label();
+            this.label_cate = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox_card = new System.Windows.Forms.PictureBox();
@@ -41,6 +41,7 @@
             this.button_replay = new System.Windows.Forms.Button();
             this.wmp = new AxWMPLib.AxWindowsMediaPlayer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label_finish = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_card)).BeginInit();
@@ -82,17 +83,17 @@
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // label_animal
+            // label_cate
             // 
-            this.label_animal.CausesValidation = false;
-            this.label_animal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_animal.ForeColor = System.Drawing.Color.Red;
-            this.label_animal.Location = new System.Drawing.Point(257, 9);
-            this.label_animal.Name = "label_animal";
-            this.label_animal.Size = new System.Drawing.Size(304, 58);
-            this.label_animal.TabIndex = 20;
-            this.label_animal.Text = "Animals";
-            this.label_animal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_cate.CausesValidation = false;
+            this.label_cate.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_cate.ForeColor = System.Drawing.Color.Red;
+            this.label_cate.Location = new System.Drawing.Point(257, 9);
+            this.label_cate.Name = "label_cate";
+            this.label_cate.Size = new System.Drawing.Size(304, 58);
+            this.label_cate.TabIndex = 20;
+            this.label_cate.Text = "Animals";
+            this.label_cate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -184,12 +185,25 @@
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
             // 
+            // label_finish
+            // 
+            this.label_finish.CausesValidation = false;
+            this.label_finish.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_finish.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_finish.Location = new System.Drawing.Point(158, 153);
+            this.label_finish.Name = "label_finish";
+            this.label_finish.Size = new System.Drawing.Size(471, 340);
+            this.label_finish.TabIndex = 33;
+            this.label_finish.Text = "You have finished this catetory";
+            this.label_finish.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Bai01.Addition.toomanysus;
             this.ClientSize = new System.Drawing.Size(800, 544);
+            this.Controls.Add(this.label_finish);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.wmp);
             this.Controls.Add(this.button_replay);
@@ -198,7 +212,7 @@
             this.Controls.Add(this.pictureBox_card);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label_animal);
+            this.Controls.Add(this.label_cate);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
@@ -219,7 +233,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Label label_animal;
+        private System.Windows.Forms.Label label_cate;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox_card;
@@ -228,5 +242,6 @@
         private System.Windows.Forms.Button button_replay;
         private AxWMPLib.AxWindowsMediaPlayer wmp;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label_finish;
     }
 }

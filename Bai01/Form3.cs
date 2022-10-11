@@ -17,6 +17,7 @@ namespace Bai01
         {
             catetory = s;   
             InitializeComponent();
+            this.CenterToScreen();
             var pos = this.PointToScreen(pictureBox_cate1.Location);
             pos = pictureBox5.PointToClient(pos);
             pictureBox_cate1.Parent = pictureBox5;

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -27,13 +28,14 @@ namespace Bai01
         public int score = 0;
         public string acc;
         public Label labelX = new Label();
+        
         // public PictureBox pictureBox_incorrect;
         public Form2(string s)
         {
             category = s;
             InitializeComponent();
             GetResourceImages();
-
+            this.CenterToScreen();
             pictureBox2.Hide();
             label2.BackColor = Color.FromArgb(236, 232, 33);
             //label1.Parent = pictureBox6;
@@ -142,7 +144,7 @@ namespace Bai01
                     pictureBox2.Show();
                     //pictureBox2.Enabled = true;
                     this.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-                    if (answer.ToLower() == this.textBox1.Text.ToLower())
+                    if (answer.ToLower().Trim() == this.textBox1.Text.ToLower().Replace('_',' ').Trim())
                     {
                         pictureBox_correcttext.Show();
                         string s = answer + " is the correct answer";
@@ -336,12 +338,12 @@ namespace Bai01
             if (s2.Length > 1)
             {
                 string[] strscore = s2.Split('_');
-                score2 = Convert.ToInt32(strscore.Length - 1);
+                score2 = Convert.ToInt32(strscore[strscore.Length - 1]);
             }
             if (s3.Length > 1)
             {
                 string[] strscore = s3.Split('_');
-                score3 = Convert.ToInt32(strscore.Length - 1);
+                score3 = Convert.ToInt32(strscore[strscore.Length - 1]);
             }
             if (score >= score1)
             {

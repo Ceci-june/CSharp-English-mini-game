@@ -125,7 +125,7 @@ namespace Bai01 {
         /// </summary>
         internal static System.Drawing.Bitmap fire_truck {
             get {
-                object obj = ResourceManager.GetObject("fire_truck", resourceCulture);
+                object obj = ResourceManager.GetObject("fire truck", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

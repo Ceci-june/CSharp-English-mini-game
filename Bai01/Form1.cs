@@ -23,6 +23,7 @@ namespace Bai01
         public Form1()
         {
             InitializeComponent();
+            this.CenterToScreen();
             this.label_fruit.BackColor = System.Drawing.Color.Transparent;
             this.label_animal.BackColor = System.Drawing.Color.Transparent;
             this.label_place.BackColor = System.Drawing.Color.Transparent;
@@ -45,12 +46,6 @@ namespace Bai01
             wmp.Ctlcontrols.play();
             wmp.settings.setMode("loop", true);
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit(); 
-        }
-
 
         private void choose()
         {
@@ -193,6 +188,11 @@ namespace Bai01
                 pictureBox1.BackgroundImage = Addition.speaker;
             }    
             soundon = !soundon;
+        }
+
+        private void pictureBox_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

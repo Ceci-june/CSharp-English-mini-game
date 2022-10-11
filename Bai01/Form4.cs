@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,6 +27,8 @@ namespace Bai01
             category = s;
             InitializeComponent();
             GetResourceImages();
+            this.CenterToScreen();
+            label_finish.Hide();
             ListViewItem item = new ListViewItem();
             //listView1.SmallImageList = images;
             int maxValue = images.Length;
@@ -35,14 +38,14 @@ namespace Bai01
             {
                 //item. = imanges[i];
                 imageList.Images.Add( images[i]);
-                this.listView1.Items.Add(name[i],i);
+                this.listView1.Items.Add(name[i].Replace('_', ' '), i);
             }
             
             this.listView1.View = View.LargeIcon;
        
             
             this.listView1.LargeImageList = imageList;
-            label_animal.BackColor = Color.Transparent;
+            label_cate.BackColor = Color.Transparent;
             this.pictureBox_card.Hide();
             this.label_card.Hide();
             this.button_good.Hide();
@@ -55,18 +58,23 @@ namespace Bai01
             switch (category)
             {
                 case "animal":
+                    label_cate.Text = "Animals";
                     props = typeof(Animal).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
                     break;
                 case "fruit":
+                    label_cate.Text = "Fruits";
                     props = typeof(Fruit).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
                     break;
                 case "vegetable":
+                    label_cate.Text = "Vegetables";
                     props = typeof(Vegetabel).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
                     break;
                 case "transport":
+                    label_cate.Text = "Transports";
                     props = typeof(Transport).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
                     break;
                 case "job":
+                    label_cate.Text = "Jobs";
                     props = typeof(Job).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
                     break;
                 default:
@@ -115,12 +123,13 @@ namespace Bai01
             pic = images[idx];
             pic_name = name[idx];
             
-            this.label_card.Text = pic_name;
+            this.label_card.Text = pic_name.Replace('_', ' ');
             //this.textBox1.Text = answer;
         }
 
         private void button_replay_Click(object sender, EventArgs e)
         {
+            label_finish.Hide();
             RandomizePicture();
         }
 
@@ -128,7 +137,19 @@ namespace Bai01
         {
             images = images.Where(val => val != pic).ToArray();
             name = name.Where(val => val != pic_name).ToArray();
-            RandomizePicture();
+            if(images.Length == 0)
+            {
+                label_card.Hide();
+                pictureBox_card.Hide();
+                button_good.Hide();
+                button_replay.Hide();
+                label_finish.Show();
+            }
+            else
+            {
+                RandomizePicture();
+            }
+                
         }
     }
 }
