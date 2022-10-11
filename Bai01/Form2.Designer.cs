@@ -193,7 +193,7 @@
             this.pictureBox_name.Size = new System.Drawing.Size(975, 532);
             this.pictureBox_name.TabIndex = 13;
             this.pictureBox_name.TabStop = false;
-            this.pictureBox_name.Click += new System.EventHandler(this.pictureBox_name_Click);
+            //this.pictureBox_name.Click += new System.EventHandler(this.pictureBox_name_Click);
             // 
             // richTextBox_namet
             // 

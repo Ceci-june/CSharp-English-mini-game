@@ -24,13 +24,9 @@ namespace Bai01
         public string[] name;
         public int count;
         public string category;
-        public bool x;
-        //public bool istrue = true;
         public int score = 0;
         public string acc;
-        public Label labelX = new Label();
         
-        // public PictureBox pictureBox_incorrect;
         public Form2(string s)
         {
             category = s;
@@ -98,8 +94,6 @@ namespace Bai01
         }
         private void RandomizePicture()
         {
-
-            x = true;
             if (images == null || images.Length == 0)
             {
                 GetResourceImages();
@@ -138,6 +132,7 @@ namespace Bai01
                 this.pictureBox3.Hide();
                 this.label1.Hide();
                 this.pictureBox_table.Hide();
+                //textBox1.Enabled = false;
                 //if (answer.ToLower().Trim() == this.textBox1.Text.ToLower().Replace('_', ' ').Trim())
 
                 if (answer.ToLower() == this.textBox1.Text.ToLower().Replace('_',' '))
@@ -172,127 +167,129 @@ namespace Bai01
                 
                 this.Invoke(new Action(() =>
                 {
-                this.textBox1.Text = "";
+                    //textBox1.Enabled = true;
+                    
+                    this.ActiveControl = textBox1;
+                    this.textBox1.Text = "";
                    
-                pictureBox4.Show();
-                pictureBox5.Show();
-                pictureBox_incorrecttext.Hide();
-                pictureBox_correcttext.Hide();
-                pictureBox2.Hide();
-                this.textBox1.Show();
-                this.pictureBox1.Show();
-                this.label2.Show();
-                this.pictureBox3.Show();
-                this.label1.Show();
-                this.pictureBox_table.Show();
+                    pictureBox4.Show();
+                    pictureBox5.Show();
+                    pictureBox_incorrecttext.Hide();
+                    pictureBox_correcttext.Hide();
+                    pictureBox2.Hide();
+                    this.textBox1.Show();
+                    this.pictureBox1.Show();
+                    this.label2.Show();
+                    this.pictureBox3.Show();
+                    this.label1.Show();
+                    this.pictureBox_table.Show();
+                    textBox1.Select();
                     if (count < 10)
-                    {
-                        RandomizePicture();
-                    }
-                    else
-                    {
-                        switch (category)
                         {
-                            case "animal":
-                                {
-                                    string s1 = Properties.Settings.Default.animal_first;
-                                    string s2 = Properties.Settings.Default.animal_second;
-                                    string s3 = Properties.Settings.Default.animal_third;
-                                    rerank(ref s1, ref s2, ref s3);
-                                    Properties.Settings.Default.animal_first = s1;
-                                    Properties.Settings.Default.animal_second = s2;
-                                    Properties.Settings.Default.animal_third = s3;
-                                    break;
-                                }
-                            case "vegetable":
-                                {
-                                    string s1 = Properties.Settings.Default.vegetable_first;
-                                    string s2 = Properties.Settings.Default.vegetable_second;
-                                    string s3 = Properties.Settings.Default.vegetable_third;
-                                    rerank(ref s1, ref s2, ref s3);
-                                    Properties.Settings.Default.vegetable_first = s1;
-                                    Properties.Settings.Default.vegetable_second = s2;
-                                    Properties.Settings.Default.vegetable_third = s3;
-                                    break;
-                                }
-                            case "fruit":
-                                {
-                                    string s1 = Properties.Settings.Default.fruit_first;
-                                    string s2 = Properties.Settings.Default.fruit_second;
-                                    string s3 = Properties.Settings.Default.fruit_third;
-                                    rerank(ref s1, ref s2, ref s3);
-                                    Properties.Settings.Default.fruit_first = s1;
-                                    Properties.Settings.Default.fruit_second = s2;
-                                    Properties.Settings.Default.fruit_third = s3;
-                                    break;
-                                }
-                            case "transport":
-                                {
-                                    string s1 = Properties.Settings.Default.transport_first;
-                                    string s2 = Properties.Settings.Default.transport_second;
-                                    string s3 = Properties.Settings.Default.transport_third;
-                                    rerank(ref s1, ref s2, ref s3);
-                                    Properties.Settings.Default.transport_first = s1;
-                                    Properties.Settings.Default.transport_second = s2;
-                                    Properties.Settings.Default.transport_third = s3;
-                                    break;
-                                }
-                            case "job":
-                                {
-                                    string s1 = Properties.Settings.Default.job_first;
-                                    string s2 = Properties.Settings.Default.job_second;
-                                    string s3 = Properties.Settings.Default.job_third;
-                                    rerank(ref s1, ref s2, ref s3);
-                                    Properties.Settings.Default.job_first = s1;
-                                    Properties.Settings.Default.job_second = s2;
-                                    Properties.Settings.Default.job_third = s3;
-                                    break;
-                                }
-                            default:
-                                break;
-                        }
-
-                        this.pictureBox_name.Image = Addition.name;
-                        this.pictureBox_name.Show();
-                        this.pictureBox_name.SizeMode = PictureBoxSizeMode.StretchImage;
-                        Properties.Settings.Default.Save();
-
-
-                        var pos = this.PointToScreen(label_nameend.Location);
-                        pos = pictureBox_name.PointToClient(pos);
-                        label_nameend.Parent = pictureBox_name;
-                        label_nameend.Location = pos;
-                        label_nameend.BackColor = Color.Transparent;
-
-                        pos = this.PointToScreen(label_scoreend.Location);
-                        pos = pictureBox_name.PointToClient(pos);
-                        label_scoreend.Parent = pictureBox_name;
-                        label_scoreend.Location = pos;
-                        label_scoreend.BackColor = Color.Transparent;
-
-                        label_scoreend.Text = "Score: " + score.ToString();
-
-                        if (acc == "")
-                        {
-                            label_nameend.Text = "Player: unnamed player";
+                            RandomizePicture();
                         }
                         else
                         {
-                            label_nameend.Text = "Player: " + acc;
-                        }
-                        pos = this.PointToScreen(pictureBox5.Location);
-                        pos = pictureBox_name.PointToClient(pos);
-                        pictureBox5.Parent = pictureBox_name;
-                        pictureBox5.Location = pos;
-                        pictureBox5.BackColor = Color.Transparent;
+                            switch (category)
+                            {
+                                case "animal":
+                                    {
+                                        string s1 = Properties.Settings.Default.animal_first;
+                                        string s2 = Properties.Settings.Default.animal_second;
+                                        string s3 = Properties.Settings.Default.animal_third;
+                                        rerank(ref s1, ref s2, ref s3);
+                                        Properties.Settings.Default.animal_first = s1;
+                                        Properties.Settings.Default.animal_second = s2;
+                                        Properties.Settings.Default.animal_third = s3;
+                                        break;
+                                    }
+                                case "vegetable":
+                                    {
+                                        string s1 = Properties.Settings.Default.vegetable_first;
+                                        string s2 = Properties.Settings.Default.vegetable_second;
+                                        string s3 = Properties.Settings.Default.vegetable_third;
+                                        rerank(ref s1, ref s2, ref s3);
+                                        Properties.Settings.Default.vegetable_first = s1;
+                                        Properties.Settings.Default.vegetable_second = s2;
+                                        Properties.Settings.Default.vegetable_third = s3;
+                                        break;
+                                    }
+                                case "fruit":
+                                    {
+                                        string s1 = Properties.Settings.Default.fruit_first;
+                                        string s2 = Properties.Settings.Default.fruit_second;
+                                        string s3 = Properties.Settings.Default.fruit_third;
+                                        rerank(ref s1, ref s2, ref s3);
+                                        Properties.Settings.Default.fruit_first = s1;
+                                        Properties.Settings.Default.fruit_second = s2;
+                                        Properties.Settings.Default.fruit_third = s3;
+                                        break;
+                                    }
+                                case "transport":
+                                    {
+                                        string s1 = Properties.Settings.Default.transport_first;
+                                        string s2 = Properties.Settings.Default.transport_second;
+                                        string s3 = Properties.Settings.Default.transport_third;
+                                        rerank(ref s1, ref s2, ref s3);
+                                        Properties.Settings.Default.transport_first = s1;
+                                        Properties.Settings.Default.transport_second = s2;
+                                        Properties.Settings.Default.transport_third = s3;
+                                        break;
+                                    }
+                                case "job":
+                                    {
+                                        string s1 = Properties.Settings.Default.job_first;
+                                        string s2 = Properties.Settings.Default.job_second;
+                                        string s3 = Properties.Settings.Default.job_third;
+                                        rerank(ref s1, ref s2, ref s3);
+                                        Properties.Settings.Default.job_first = s1;
+                                        Properties.Settings.Default.job_second = s2;
+                                        Properties.Settings.Default.job_third = s3;
+                                        break;
+                                    }
+                                default:
+                                    break;
+                            }
 
-                        label_scoreend.Show();
-                        label_nameend.Show();
-                    }
+                            this.pictureBox_name.Image = Addition.name;
+                            this.pictureBox_name.Show();
+                            this.pictureBox_name.SizeMode = PictureBoxSizeMode.StretchImage;
+                            Properties.Settings.Default.Save();
+
+
+                            var pos = this.PointToScreen(label_nameend.Location);
+                            pos = pictureBox_name.PointToClient(pos);
+                            label_nameend.Parent = pictureBox_name;
+                            label_nameend.Location = pos;
+                            label_nameend.BackColor = Color.Transparent;
+
+                            pos = this.PointToScreen(label_scoreend.Location);
+                            pos = pictureBox_name.PointToClient(pos);
+                            label_scoreend.Parent = pictureBox_name;
+                            label_scoreend.Location = pos;
+                            label_scoreend.BackColor = Color.Transparent;
+
+                            label_scoreend.Text = "Score: " + score.ToString();
+
+                            if (acc == "")
+                            {
+                                label_nameend.Text = "Player: unnamed player";
+                            }
+                            else
+                            {
+                                label_nameend.Text = "Player: " + acc;
+                            }
+                            pos = this.PointToScreen(pictureBox5.Location);
+                            pos = pictureBox_name.PointToClient(pos);
+                            pictureBox5.Parent = pictureBox_name;
+                            pictureBox5.Location = pos;
+                            pictureBox5.BackColor = Color.Transparent;
+
+                            label_scoreend.Show();
+                            label_nameend.Show();
+                        }
                 }));
             });
-            //this.pictureBox2.Hide();
-            
         }
         private void rerank(ref string s1, ref string s2, ref string s3)
         {
@@ -323,8 +320,6 @@ namespace Bai01
                 s3 = s2;
                 s2 = s1;
                 s1 = acc + "_" + score.ToString();
-                
-
             }
             else if (score >= score2)
             {
@@ -362,12 +357,9 @@ namespace Bai01
                 this.label_name.Hide();
                 RandomizePicture();
                 textBox1.Enabled = true;
+                textBox1.Focus();
             }
         }
 
-        private void pictureBox_name_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
