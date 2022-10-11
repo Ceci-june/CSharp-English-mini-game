@@ -67,7 +67,7 @@ namespace Bai01
                     break;
                 case "vegetable":
                     label_cate.Text = "Vegetables";
-                    props = typeof(Vegetabel).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
+                    props = typeof(Vegetable).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
                     break;
                 case "transport":
                     label_cate.Text = "Transports";
@@ -92,9 +92,6 @@ namespace Bai01
         {
             this.Close();
         }
-
-  
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.pictureBox_card.Show();
@@ -103,7 +100,6 @@ namespace Bai01
             this.button_good.Show();
             this.button_replay.Show();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.pictureBox_card.Hide();

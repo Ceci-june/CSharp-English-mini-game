@@ -7,6 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -38,10 +39,7 @@ namespace Bai01
             this.CenterToScreen();
             pictureBox2.Hide();
             label2.BackColor = Color.FromArgb(236, 232, 33);
-            //label1.Parent = pictureBox6;
-            //label1.BackColor = System.Drawing.Color.Transparent;
-            //label2.ForeColor = Color.Red;
-            //label2.Text = "0";
+            
             var pos = this.PointToScreen(label1.Location);
             pos = pictureBox_table.PointToClient(pos);
             label1.Parent = pictureBox_table;
@@ -69,9 +67,7 @@ namespace Bai01
             textBox1.Enabled = false;
             label_nameend.Hide();
             label_scoreend.Hide();
-            //label4.Text = Properties.Settings.Default.animal_first.ToString();
-            //pictureBox_incorrect.Size = this.Size;
-
+            
         }
         private void GetResourceImages()
         {
@@ -85,7 +81,7 @@ namespace Bai01
                     props = typeof(Fruit).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
                     break;
                 case "vegetable":
-                    props = typeof(Vegetabel).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
+                    props = typeof(Vegetable).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
                     break;
                 case "transport":
                     props = typeof(Transport).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
@@ -94,7 +90,6 @@ namespace Bai01
                     props = typeof(Job).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
                     break;
                 default:
-                    // code block
                     break;
             }
 
@@ -105,7 +100,6 @@ namespace Bai01
         {
 
             x = true;
-            //this.textBox1.Text = "";
             if (images == null || images.Length == 0)
             {
                 GetResourceImages();
@@ -122,98 +116,75 @@ namespace Bai01
             count++;
             this.label1.Text = "Question: " + count.ToString();
             label2.Text = score.ToString();
-            
-
-            //this.textBox1.Text = answer;
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar.Equals((char)13))
             {
-                if (x)
+                
+                this.pictureBox2.Enabled = true;
+                pictureBox4.Hide();
+                pictureBox5.Hide();
+                label3.Show();
+                label3.Text = "";
+                this.textBox1.Hide();
+                this.pictureBox1.Hide();
+                pictureBox2.Image = Addition.space;
+                pictureBox2.Show();
+                this.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                    
+                this.label2.Hide();
+                this.pictureBox3.Hide();
+                this.label1.Hide();
+                this.pictureBox_table.Hide();
+                //if (answer.ToLower().Trim() == this.textBox1.Text.ToLower().Replace('_', ' ').Trim())
+
+                if (answer.ToLower() == this.textBox1.Text.ToLower().Replace('_',' '))
                 {
-                    pictureBox4.Hide();
-                    pictureBox5.Hide();
-                    label3.Show();
-                    label3.Text = "";
-                    this.textBox1.Hide();
-                    this.pictureBox1.Hide();
-                    pictureBox2.Image = Addition.space;
-                    //pictureBox2.Image = Addition.space;
-                    pictureBox2.Show();
-                    //pictureBox2.Enabled = true;
-                    this.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-                    if (answer.ToLower().Trim() == this.textBox1.Text.ToLower().Replace('_',' ').Trim())
-                    {
-                        pictureBox_correcttext.Show();
-                        string s = answer + " is the correct answer";
-
-                        Task.Run(() =>
-                        {
-                            Thread.Sleep(900);
-                            //Thread.Sleep(10000);
-                            for (int i = 1; i <= s.Length; i++)
-                            {
-                                Thread.Sleep(100);
-                                this.Invoke(new Action(() =>
-                                {
-                                    label3.Text = s.Substring(0, i);
-                                }));
-                            }
-                            //Thread.Sleep(1500);
-                            //pictureBox2.Enabled = false;
-                        });
-                        //this.BackgroundImage = Addition.correct;
-                        score++;
-
-                    }
-                    else
-                    {
-                        
-                        pictureBox_incorrecttext.Show();
-                        string s = "the correct answer is " + answer;
-
-                        Task.Run(() =>
-                        {
-                            Thread.Sleep(900);
-
-                            for (int i = 1; i <= s.Length; i++)
-                            {
-                                Thread.Sleep(100);
-                                this.Invoke(new Action(() =>
-                                {
-                                    label3.Text = s.Substring(0, i);
-                                }));
-                            }
-
-
-                        });
-                    }
-                    this.textBox1.Text = "";
-                    x = false;
-                    this.label2.Hide();
-                    this.pictureBox3.Hide();
-                    this.label1.Hide();
-                    this.pictureBox_table.Hide();
-                    // this.pictureBox5.Hide();
+                    pictureBox_correcttext.Show();
+                    string s = answer + " is the correct answer";
+                    score++;
+                    result_newimage(s);
                 }
                 else
                 {
-                    pictureBox4.Show();
-                    pictureBox5.Show();
-                    pictureBox_incorrecttext.Hide();
-                    pictureBox_correcttext.Hide();
-                    pictureBox2.Hide();
-
-                    this.textBox1.Show();
-                    this.pictureBox1.Show();
-                    this.label2.Show();
-                    this.pictureBox3.Show();
-                    //this.BackgroundImage = Addition.Chat;
-                    this.label1.Show();
-                    this.pictureBox_table.Show();
-                    //this.pictureBox5.Show();
+                    pictureBox_incorrecttext.Show();
+                    string s = "the correct answer is " + answer;
+                    result_newimage(s);
+                }
+            }
+        }
+        private void result_newimage(string s)
+        {
+            Task.Run(() =>
+            {
+                Thread.Sleep(900);
+                for (int i = 1; i <= s.Length; i++)
+                {
+                    Thread.Sleep(100);
+                    this.Invoke(new Action(() =>
+                    {
+                        label3.Text = s.Substring(0, i);
+                    }));
+                }
+                Thread.Sleep(1000);
+                
+                this.Invoke(new Action(() =>
+                {
+                this.textBox1.Text = "";
+                   
+                pictureBox4.Show();
+                pictureBox5.Show();
+                pictureBox_incorrecttext.Hide();
+                pictureBox_correcttext.Hide();
+                pictureBox2.Hide();
+                this.textBox1.Show();
+                this.pictureBox1.Show();
+                this.label2.Show();
+                this.pictureBox3.Show();
+                this.label1.Show();
+                this.pictureBox_table.Show();
                     if (count < 10)
                     {
                         RandomizePicture();
@@ -281,13 +252,12 @@ namespace Bai01
                                 break;
                         }
 
-                        //this.textBox1.Enabled = false;
                         this.pictureBox_name.Image = Addition.name;
                         this.pictureBox_name.Show();
                         this.pictureBox_name.SizeMode = PictureBoxSizeMode.StretchImage;
                         Properties.Settings.Default.Save();
 
-   
+
                         var pos = this.PointToScreen(label_nameend.Location);
                         pos = pictureBox_name.PointToClient(pos);
                         label_nameend.Parent = pictureBox_name;
@@ -301,8 +271,8 @@ namespace Bai01
                         label_scoreend.BackColor = Color.Transparent;
 
                         label_scoreend.Text = "Score: " + score.ToString();
-                        
-                        if(acc=="")
+
+                        if (acc == "")
                         {
                             label_nameend.Text = "Player: unnamed player";
                         }
@@ -319,11 +289,10 @@ namespace Bai01
                         label_scoreend.Show();
                         label_nameend.Show();
                     }
-                    x = true;
-
-                }
-
-            }
+                }));
+            });
+            //this.pictureBox2.Hide();
+            
         }
         private void rerank(ref string s1, ref string s2, ref string s3)
         {
@@ -345,43 +314,28 @@ namespace Bai01
                 string[] strscore = s3.Split('_');
                 score3 = Convert.ToInt32(strscore[strscore.Length - 1]);
             }
-            if (score >= score1)
+            if (acc == "")
+            {
+                acc = "unnamed player";
+            }    
+                if (score >= score1)
             {
                 s3 = s2;
                 s2 = s1;
-                if (acc == "")
-                {
-                    s1 = "unnamed player_" + score.ToString();
-                }
-                else
-                {
-                    s1 = acc + "_" + score.ToString();
-                }
+                s1 = acc + "_" + score.ToString();
+                
 
             }
             else if (score >= score2)
             {
                 s3 = s2;
-                if (acc == "")
-                {
-                    s2 = "unnamed player_" + score.ToString();
-                }
-                else
-                {
-                    s2 = acc + "_" + score.ToString();
-                }
+                s2 = acc + "_" + score.ToString();
+                
 
             }
             else if (score >= score3)
             {
-                if (acc == "")
-                {
-                    s3 = "unnamed player_" + score.ToString();
-                }
-                else
-                {
-                    s3 = acc + "_" + score.ToString();
-                }
+                s3 = acc + "_" + score.ToString();
             }
         }
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -406,7 +360,6 @@ namespace Bai01
                 this.pictureBox_name2.Hide();
                 this.pictureBox_name4.Hide();
                 this.label_name.Hide();
-                //this.richTextBox_namet.Enabled = false;
                 RandomizePicture();
                 textBox1.Enabled = true;
             }

@@ -97,10 +97,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Transport.resx</DependentUpon>
     </Compile>
-    <Compile Include="Vegetabel.Designer.cs">
+    <Compile Include="Vegetable.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Vegetabel.resx</DependentUpon>
+      <DependentUpon>Vegetable.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Addition.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -144,9 +144,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Transport.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vegetabel.resx">
+    <EmbeddedResource Include="Vegetable.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Vegetabel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Vegetable.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

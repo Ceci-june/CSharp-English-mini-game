@@ -194,7 +194,7 @@
             this.label_finish.Name = "label_finish";
             this.label_finish.Size = new System.Drawing.Size(471, 340);
             this.label_finish.TabIndex = 33;
-            this.label_finish.Text = "You have finished this catetory";
+            this.label_finish.Text = "You have finished this catetory.";
             this.label_finish.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form4
