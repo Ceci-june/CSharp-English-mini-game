@@ -25,11 +25,6 @@ namespace aibitgiau
             RandomizePicture();
             RandomizePicture();
         }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
         private void GetResourceImages()
         {
             PropertyInfo[] props = typeof(Animal).GetProperties(BindingFlags.NonPublic | BindingFlags.Static);
@@ -67,7 +62,7 @@ namespace aibitgiau
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            pictureBox1.Key
         }
     }
 }
