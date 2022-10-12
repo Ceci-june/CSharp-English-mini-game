@@ -144,17 +144,17 @@ namespace Bai01
                 this.label1.Hide();
                 this.pictureBox_table.Hide();
 
-                if (answer.ToLower().Trim() == this.textBox1.Text.ToLower().Replace('_', ' ').Trim())
+                if (answer.ToLower().Replace('_', ' ').Trim() == this.textBox1.Text.ToLower().Trim())
                 {
                     pictureBox_correcttext.Show();
-                    string s = answer + " is the correct answer";
+                    string s = answer.Replace('_', ' ') + " is the correct answer";
                     score++;
                     result_newimage(s);
                 }
                 else
                 {
                     pictureBox_incorrecttext.Show();
-                    string s = "the correct answer is " + answer;
+                    string s = "the correct answer is " + answer.Replace('_', ' ');
                     result_newimage(s);
                 }
                 //}
@@ -371,7 +371,6 @@ namespace Bai01
                 this.BackgroundImage = Addition.Chat;
             }
         }
-
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             if (Form1.soundon)
